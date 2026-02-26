@@ -1,0 +1,174 @@
+/* Testimonials Carousel Animation - Dynamically set via JavaScript */
+.testimonials-track {
+    will-change: transform;
+    display: flex;
+    /* Width set by JS */
+    gap: 2rem;
+    padding: 20px 0;
+    /* Add padding to track to avoid cutting off shadows */
+    /* Aggressive Stabilization */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.testimonials-track:hover {
+    animation-play-state: paused;
+}
+
+.testimonials-carousel-wrapper {
+    padding: 40px 0 20px 0;
+    /* Ensure no overflow issues */
+    overflow: hidden;
+    /* Create new stacking context and layer */
+    position: relative;
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    contain: paint layout;
+    /* Browser optimization hint */
+}
+
+/* Testimonial card styles */
+.testimonial-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        border-color 0.3s ease;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    /* Dark glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    min-width: 350px;
+    /* Reduced width */
+    max-width: 350px;
+    /* Fixed height for uniformity - exact as requested */
+    height: 300px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    /* Flex layout to structure internals */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Hardware acceleration */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    image-rendering: -webkit-optimize-contrast;
+    /* Crisp rendering */
+}
+
+/* Card Content Area */
+.testimonial-card .card-content {
+    padding: 30px 25px 5px 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Prevent text spilling out */
+}
+
+/* Profile wrapper stabilization */
+.testimonial-card .profile-wrapper,
+.testimonial-card .profile-inner {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    /* Ensure border rendering is crisp */
+    box-sizing: border-box;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) translate3d(0, 0, 1px);
+    /* Slight Z-lift */
+    box-shadow: 0 15px 40px rgba(252, 196, 25, 0.15) !important;
+    border: 1px solid var(--accent-gold);
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 10;
+}
+
+.testimonial-card h3 {
+    color: var(--accent-gold);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.testimonial-card p.client-role {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    margin: 2px 0 10px 0;
+}
+
+.testimonial-card hr {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 1px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.testimonial-card p.testimonial-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 0;
+
+    /* 3-Line Clamp */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Read More Button - Styled to appear near the end or below */
+.read-more-btn {
+    color: var(--accent-gold);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 5px;
+    text-align: left;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.read-more-btn:hover {
+    color: #fff;
+}
+
+/* Bottom Section (Rating + Quote Icon) */
+.testimonial-card .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding: 0 0 0 0;
+}
+
+/* Update root var for card background if used elsewhere,
+   though we override it in .testimonial-card */
+:root {
+    --card-white: rgba(255, 255, 255, 0.05);
+}
+
+/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .testimonial-card {
+        min-width: 320px;
+        max-width: 320px;
+        height: 320px;
+    }
+}

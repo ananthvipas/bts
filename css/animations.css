@@ -1,0 +1,114 @@
+/* 
+    Bluro Technology - Animation System
+    Smooth, premium entrance animations
+*/
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+/* Staggered reveal for cards */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.stagger-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero specific */
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-animate {
+    animation: heroReveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-play-state: paused;
+}
+
+/* Hover effects */
+.hover-scale {
+    transition: var(--transition);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.glass-card {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.glass-card:hover {
+    border-color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Slide Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-left {
+    opacity: 0;
+    animation: slideInLeft 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-play-state: paused;
+}
+
+.slide-right {
+    opacity: 0;
+    animation: slideInRight 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-play-state: paused;
+}

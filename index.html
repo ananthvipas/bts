@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Bluro Technology provides production-ready embedded solutions, IoT systems, and precision PCB design. Engineering excellence for innovators seeking reliable hardware scaling.">
+    <title>Bluro | Advanced Embedded Solutions & IoT Engineering India</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/tit143lg123.svg">
+
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Bluro - Advanced Embedded Solutions & IoT">
+    <meta property="og:description"
+        content="Bluro provides end-to-end engineering excellence in Embedded Solutions, IoT, and Prototype Development for modern engineering.">
+    <meta property="og:image" content="assets/images/hero-bg12345.jpg">
+    <meta property="og:url" content="https://www.blurotech.in">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.blurotech.in/#organization",
+        "name": "Bluro Technology",
+        "url": "https://www.blurotech.in",
+        "logo": "https://www.blurotech.in/assets/icons/logo6123516.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9876543210",
+          "contactType": "customer service",
+          "email": "blurotech.in@gmail.com"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/blurotech",
+          "https://www.instagram.com/blurotech/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "parentOrganization": { "@id": "https://www.blurotech.in/#organization" },
+        "name": "Bluro Technology Solutions",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tamilnadu",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "11.0168",
+          "longitude": "76.9558"
+        },
+        "url": "https://www.blurotech.in"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Embedded Systems Development",
+        "provider": { "@id": "https://www.blurotech.in/#organization" },
+        "description": "Custom microcontroller hardware, RTOS firmware, and sensor integration."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "IoT Solutions & Product Development",
+        "provider": { "@id": "https://www.blurotech.in/#organization" },
+        "description": "End-to-end IoT architecture, secure cloud integration, and industrial monitoring."
+      }
+    ]
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/why-us.css">
+    <link rel="stylesheet" href="css/cta-contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Landing Page Specific Styles */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.75)),
+                url('assets/images/hero-bg12345.jpg') center/cover no-repeat,
+                var(--primary-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="0.5" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent, var(--primary-deep));
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .tagline {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        section {
+            padding: 2rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Capability Grid */
+        .capability-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cap-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .cap-item:hover {
+            background: rgba(0, 240, 255, 0.05);
+            border-color: rgba(0, 240, 255, 0.2);
+            transform: translateX(8px);
+        }
+
+        .cap-icon {
+            color: var(--accent-cyan);
+            font-size: 1.25rem;
+            background: rgba(0, 240, 255, 0.1);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.15);
+        }
+
+        .cap-title {
+            display: block;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cap-desc {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* About Section */
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: url('assets/images/about23dede4786287423764.jpg') center/cover no-repeat;
+            border-radius: 12px;
+            height: 400px;
+            position: relative;
+            border: 1px solid var(--glass);
+        }
+
+        .about-image::after {
+            content: 'BLURO LABS';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-weight: 800;
+            opacity: 0.1;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container container-nav">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/icons/logo6123516.svg" alt="Bluro Logo">
+                    <span>BLURO</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact-cta">Contact</a></li>
+                </ul>
+                <div class="header-btns">
+                    <!-- <a href="index.html#contact-cta" class="btn btn-outline"></a> -->
+                    <button class="menu-toggle" aria-label="Toggle Menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content hero-animate">
+                    <h1 class="tagline"
+                        style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px;">
+                        EMBEDDED SYSTEMS & IoT PRODUCT DEVELOPMENT COMPANY</h1>
+                    <h2 style="font-size: 3rem; line-height: 1.2; font-weight: 800; margin-bottom: 1.5rem;">Innovating
+                        Today for a Smarter Tomorrow.</h2>
+                    <p class="hero-desc">From complex embedded systems to scalable IoT infrastructure, Bluro solves the
+                        technical challenges that keep your innovation from scaling.</p>
+                    <div class="hero-btns">
+                        <a href="index.html#contact-cta" class="btn btn-primary">Get a Consultation</a>
+                        <a href="portfolio.html" class="btn btn-outline">Explore Case Studies</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <div class="section-header fade-up" style="margin-bottom: 2rem;">
+                    <h2>SERVICES WE OFFER</h2>
+                </div>
+
+                <div class="services-overview-container" style="margin-top: 2rem;">
+                    <!-- 1. Embedded Systems Development -->
+                    <div class="service-detail slide-right ">
+                        <div class="service-content">
+                            <h3>Embedded Systems Development</h3>
+                            <p
+                                style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+                                End-to-end embedded systems engineering including hardware architecture,
+                                real-time firmware development, and hardware–software co-design for
+                                production-grade devices.
+                            </p>
+                            <div class="capability-grid">
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-microchip"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Core Architecture</span>
+                                        <span class="cap-desc">Microcontroller hardware, bare-metal/RTOS firmware, and
+                                            sensor integration.</span>
+                                    </div>
+                                </div>
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-cogs"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Applications</span>
+                                        <span class="cap-desc">Motor controllers, water/gate automation, and industrial
+                                            logic.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="portfolio.html" class="btn btn-primary"
+                                style="margin-top: 1.5rem; display: inline-block;">View Project Examples →</a>
+                        </div>
+                        <div class="service-img" role="img" aria-label="Embedded Systems Development showcase"
+                            style="background-image: url('assets/images/Services/embedded-solutions.png');"></div>
+                    </div>
+
+                    <!-- 2. PCB Design & Hardware Engineering -->
+                    <div class="service-detail slide-left">
+                        <div class="service-content">
+                            <h3>PCB Design & Hardware Engineering</h3>
+                            <p
+                                style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+                                Precision multi-layer PCB layout and hardware validation services ensuring low-noise,
+                                high-speed signal integrity from rapid prototyping through to high-yield mass
+                                manufacturing.
+                            </p>
+                            <div class="capability-grid">
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-layer-group"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Layout & Design</span>
+                                        <span class="cap-desc">Electronic Manufacturing Services (EMS), 1–4 layer
+                                            layout, schematic capture, and BOM optimization.</span>
+                                    </div>
+                                </div>
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Validation</span>
+                                        <span class="cap-desc">DRC/DFM verification, Gerber generation, and prototype
+                                            validation.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="portfolio.html" class="btn btn-primary"
+                                style="margin-top: 1.5rem; display: inline-block;">Explore PCB Portfolio →</a>
+                        </div>
+                        <div class="service-img" role="img" aria-label="PCB Design and Hardware Engineering showcase"
+                            style="background-image: url('assets/images/Services/pcb-design.png');"></div>
+                    </div>
+
+                    <!-- 3. IoT Solutions & Product Development -->
+                    <div class="service-detail slide-right">
+                        <div class="service-content">
+                            <h3>IoT Solutions & Product Development</h3>
+                            <p
+                                style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+                                Scalable edge-to-cloud architectures featuring secure wireless connectivity,
+                                custom sensor telemetry for industrial and consumer IoT
+                                platforms.
+                            </p>
+                            <div class="capability-grid">
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-wifi"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Connectivity</span>
+                                        <span class="cap-desc">Low-power IoT design for WiFi, BLE, LoRa, and Cellular
+                                            (GSM/LTE) integration.</span>
+                                    </div>
+                                </div>
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-server"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Architecture</span>
+                                        <span class="cap-desc">Edge computing solutions, secure data-to-cloud, and
+                                            industrial monitoring.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="portfolio.html" class="btn btn-primary"
+                                style="margin-top: 1.5rem; display: inline-block;">View IoT Ecosystems →</a>
+                        </div>
+                        <div class="service-img" role="img" aria-label="IoT Solutions and Product Development showcase"
+                            style="background-image: url('assets/images/Services/iot-solutions.png');"></div>
+                    </div>
+
+                    <!-- 4. Custom Development Boards & Evaluation Kits -->
+                    <div class="service-detail slide-left">
+                        <div class="service-content">
+                            <h3>Custom Development Boards & Kits</h3>
+                            <p
+                                style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+                                Bespoke microcontroller evaluation platforms and expansion modules engineered to
+                                accelerate your R&D cycles, firmware testing, and proof-of-concept deployments.
+                            </p>
+                            <div class="capability-grid">
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-tools"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">R&D Support</span>
+                                        <span class="cap-desc">Custom MCU boards, expansion interfaces, and debug
+                                            tools.</span>
+                                    </div>
+                                </div>
+                                <div class="cap-item">
+                                    <div class="cap-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                    <div class="cap-text">
+                                        <span class="cap-title">Rapid Prototyping</span>
+                                        <span class="cap-desc">Educational kits and hardware evaluation
+                                            platforms.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="index.html#contact-cta" class="btn btn-primary"
+                                style="margin-top: 1.5rem; display: inline-block;">Get a Quote →</a>
+                        </div>
+                        <div class="service-img"
+                            style="background-image: url('assets/images/Services/prototype-development.png');"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Portfolio Showcase V3 -->
+        <section id="portfolio-preview" class="preview-section-v3">
+            <div class="preview-blueprint-grid"></div>
+
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="tagline">ENGINEERING SHOWCASE</span>
+                    <h2 style="font-size: clamp(2rem, 5vw, 3.5rem);">System Deployments</h2>
+                </div>
+
+                <div class="preview-grid-featured">
+                    <!-- Featured Case: Integrated IoT Ecosystem -->
+                    <div class="preview-card-v3 featured fade-up" onclick="location.href='portfolio.html'">
+                        <div class="preview-img-wrapper"
+                            style="background-image: url('assets/images/portfolio/sam0124218.png');"></div>
+                        <div class="preview-overlay">
+                            <span class="preview-cat">Unified Engineering Suite</span>
+                            <h3>Integrated IoT Platform</h3>
+                            <p class="preview-desc">A multi-node ecosystem featuring industrial motor control,
+                                LoRa-enabled sensor networks, and greenhouse automation built on custom PCB
+                                architectures.</p>
+                            <div class="preview-arrow">SYSTEM ARCHITECTURE <span>&rarr;</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Case 1: NextgenLink -->
+                    <div class="preview-card-v3 fade-up" style="transition-delay: 0.1s;"
+                        onclick="location.href='portfolio.html'">
+                        <div class="preview-img-wrapper"
+                            style="background-image: url('assets/images/portfolio/Sensor_Interfacing_Board(ESP32_based).png');">
+                        </div>
+                        <div class="preview-overlay">
+                            <span class="preview-cat">Connectivity</span>
+                            <h3>IoT Gateway</h3>
+                            <p class="preview-desc">Industrial data bridging and edge computing gateway.</p>
+                            <div class="preview-arrow">EXPLORE <span>&rarr;</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Case 2: Smart Energy Meter -->
+                    <div class="preview-card-v3 fade-up" style="transition-delay: 0.2s;"
+                        onclick="location.href='portfolio.html'">
+                        <div class="preview-img-wrapper"
+                            style="background-image: url('assets/images/portfolio/Smart_Energy_Meter.png');"></div>
+                        <div class="preview-overlay">
+                            <span class="preview-cat">Energy</span>
+                            <h3>Smart Energy Meter</h3>
+                            <p class="preview-desc">Real-time load monitoring and protection system.</p>
+                            <div class="preview-arrow">EXPLORE <span>&rarr;</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 5rem; position: relative; z-index: 10;">
+                    <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+
+
+
+        <!-- Why Choose Us Section - Diagonal Grid Layout -->
+        <section id="why-us" class="why-us-unique-section">
+            <div class="why-us-mesh"></div>
+
+            <div class="container-wide">
+                <div class="why-us-diagonal-container">
+                    <!-- LEFT SIDE: Sticky Title Panel -->
+                    <div class="why-us-title-panel">
+                        <h2 class="mega-title">
+                            Why <br>
+                            <span class="gradient-text">Work With</span><br>
+                            <span class="question-mark">Blurotech ?</span>
+                        </h2>
+                        <div class="connecting-line"></div>
+                        <p class="lead-text">Engineering excellence that transforms vision into reality.</p>
+
+                        <a href="index.html#contact-cta" class="modern-cta">
+                            <span class="cta-text">Start Your Project</span>
+                            <div class="cta-arrow">→</div>
+                        </a>
+                    </div>
+
+                    <!-- RIGHT SIDE: Diagonal Grid of Cards -->
+                    <div class="why-us-grid-diagonal">
+                        <!-- Card 1 -->
+                        <div class="diagonal-card card-1" data-row="1">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4>Built on Trust</h4>
+                            <p>Every commitment we make is backed by documented processes, honest timelines, and zero
+                                hidden surprises.</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="diagonal-card card-2" data-row="1">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <h4>True Engineering Partnership</h4>
+                            <p>We don't just execute tasks — we collaborate from ideation to deployment as a dedicated
+                                extension of your team.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="diagonal-card card-3" data-row="2">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Transparent Communication</h4>
+                            <p>Regular milestone reports, direct access to our engineers, and clear documentation at
+                                every stage of your project.</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="diagonal-card card-4" data-row="2">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Rigorous Validation</h4>
+                            <p>Every deliverable undergoes structured hardware testing and firmware verification before
+                                it reaches your hands.</p>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="diagonal-card card-5" data-row="3">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <h4>Confidentiality Assured</h4>
+                            <p>Your IP, schematics, and proprietary designs are protected under strict NDA agreements
+                                from day one.</p>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="diagonal-card card-6" data-row="3">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Proven Reliability</h4>
+                            <p>Our systems are field-tested in real industrial environments — not just lab conditions —
+                                so you can deploy with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <!-- Statistics Section - Professional Design -->
+        <section id="stats" class="stats-professional">
+            <div class="stats-bg-pattern"></div>
+            <div class="container">
+                <div class="stats-header">
+                    <h2 class="stats-title">Our Work So Far</h2>
+                </div>
+
+                <div class="stats-showcase">
+                    <!-- Stat 1: Happy Clients -->
+                    <div class="stat-box" data-aos="fade-up">
+                        <div class="stat-gradient-border"></div>
+                        <div class="stat-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="counter" data-target="12">0</h3>
+                            <p class="stat-label-text">Happy Clients</p>
+                            <div class="stat-underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2: Projects Done -->
+                    <div class="stat-box" data-aos="fade-up" data-delay="100">
+                        <div class="stat-gradient-border"></div>
+                        <div class="stat-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="counter" data-target="14">0</h3>
+                            <p class="stat-label-text">Projects Done</p>
+                            <div class="stat-underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Stat 3: Devices Deployed -->
+                    <div class="stat-box" data-aos="fade-up" data-delay="200">
+                        <div class="stat-gradient-border"></div>
+                        <div class="stat-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="counter" data-target="2">0</h3>
+                            <p class="stat-label-text">Devices Deployed</p>
+                            <div class="stat-underline"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" style="padding: 5rem 0; background: var(--primary-deep); overflow: hidden;">
+            <div class="container">
+                <div class="section-header fade-up" style="margin-bottom: 4rem;">
+                    <h2>What Our Clients Say</h2>
+                    <p>Trusted by industry leaders worldwide.</p>
+                </div>
+            </div>
+
+            <div class="testimonials-carousel-wrapper" style="position: relative; overflow: hidden;">
+                <div class="testimonials-track" id="testimonials-track">
+                    <!-- Original 3 Cards -->
+                    <!-- Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="profile-wrapper"
+                            style="position: absolute; top: -40px; right: 30px; background: var(--primary-deep); padding: 6px; border-radius: 50%; border: 2px solid var(--accent-gold);">
+                            <div class="profile-inner"
+                                style="background: var(--accent-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--primary-deep); border: 3px solid var(--primary-deep);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
+                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                                Sunthara
+                            </h3>
+                            <p
+                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                                SKF Automation</p>
+                            <hr
+                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
+                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">Bluro
+                                engineered our industrial sensing nodes from scratch. Their ability to deliver
+                                production-ready PCBs on a tight timeline saved us months of R&D.</p>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 10px;">
+                            <div
+                                style="background: var(--accent-gold); color: var(--primary-deep); padding: 15px 30px; border-bottom-left-radius: 20px; border-top-right-radius: 40px; font-size: 18px; letter-spacing: 3px; flex: 1;">
+                                ---</div>
+                            <div style="padding: 0 30px 20px 20px; color: var(--accent-gold);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="testimonial-card">
+                        <div class="profile-wrapper"
+                            style="position: absolute; top: -40px; right: 30px; background: var(--primary-deep); padding: 6px; border-radius: 50%; border: 2px solid var(--accent-gold);">
+                            <div class="profile-inner"
+                                style="background: var(--accent-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--primary-deep); border: 3px solid var(--primary-deep);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
+                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">Shivani
+                            </h3>
+                            <p
+                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                                Student</p>
+                            <hr
+                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
+                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">
+                                Satisfied with the PCB design service. The team maintained clear communication and
+                                provided consistent progress updates throughout the project.</p>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 10px;">
+                            <div
+                                style="background: var(--accent-gold); color: var(--primary-deep); padding: 15px 30px; border-bottom-left-radius: 20px; border-top-right-radius: 40px; font-size: 18px; letter-spacing: 3px; flex: 1;">
+                                --- </div>
+                            <div style="padding: 0 30px 20px 20px; color: var(--accent-gold);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="profile-wrapper"
+                            style="position: absolute; top: -40px; right: 30px; background: var(--primary-deep); padding: 6px; border-radius: 50%; border: 2px solid var(--accent-gold);">
+                            <div class="profile-inner"
+                                style="background: var(--accent-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--primary-deep); border: 3px solid var(--primary-deep);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
+                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                                Giri
+                            </h3>
+                            <p
+                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                                NPower Electro</p>
+                            <hr
+                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
+                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">Very
+                                satisfied with the embedded board development support. The hardware was well-designed,
+                                optimized, and delivered on time with excellent technical coordination.</p>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 10px;">
+                            <div
+                                style="background: var(--accent-gold); color: var(--primary-deep); padding: 15px 30px; border-bottom-left-radius: 20px; border-top-right-radius: 40px; font-size: 18px; letter-spacing: 3px; flex: 1;">
+                                ---</div>
+                            <div style="padding: 0 30px 20px 20px; color: var(--accent-gold);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="testimonial-card">
+                        <div class="profile-wrapper"
+                            style="position: absolute; top: -40px; right: 30px; background: var(--primary-deep); padding: 6px; border-radius: 50%; border: 2px solid var(--accent-gold);">
+                            <div class="profile-inner"
+                                style="background: var(--accent-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--primary-deep); border: 3px solid var(--primary-deep);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
+                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                                Manikandan
+                            </h3>
+                            <p
+                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                                Entrepreneur</p>
+                            <hr
+                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
+                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">
+                                Professional circuit design service with strong technical expertise. The team ensured
+                                accuracy, reliability, and smooth coordination from concept to final design.</p>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 10px;">
+                            <div
+                                style="background: var(--accent-gold); color: var(--primary-deep); padding: 15px 30px; border-bottom-left-radius: 20px; border-top-right-radius: 40px; font-size: 18px; letter-spacing: 3px; flex: 1;">
+                                ---</div>
+                            <div style="padding: 0 30px 20px 20px; color: var(--accent-gold);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="testimonial-card">
+                        <div class="profile-wrapper"
+                            style="position: absolute; top: -40px; right: 30px; background: var(--primary-deep); padding: 6px; border-radius: 50%; border: 2px solid var(--accent-gold);">
+                            <div class="profile-inner"
+                                style="background: var(--accent-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--primary-deep); border: 3px solid var(--primary-deep);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
+                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                                Kanimozhi
+                            </h3>
+                            <p
+                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                                Student</p>
+                            <hr
+                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
+                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">
+                                Very impressed with the sensor integration work. The system performance was accurate and
+                                stable, and the team maintained clear status at every stage.</p>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 10px;">
+                            <div
+                                style="background: var(--accent-gold); color: var(--primary-deep); padding: 15px 30px; border-bottom-left-radius: 20px; border-top-right-radius: 40px; font-size: 18px; letter-spacing: 3px; flex: 1;">
+                                ---</div>
+                            <div style="padding: 0 30px 20px 20px; color: var(--accent-gold);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 35px; height: 35px;">
+                                    <path
+                                        d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact & CTA Unified Section - Schematic BluePrint Theme -->
+        <section id="contact-cta" class="schematic-section">
+            <div class="schematic-grid-bg"></div>
+            <div class="container">
+                <div class="blueprint-container">
+                    <div class="blueprint-main-grid">
+                        <!-- Left Block: Intro & Contact Info -->
+                        <div class="grid-block main-cta-block">
+
+                            <span class="tech-label">Technical Consultation</span>
+                            <h2 class="blueprint-title">START YOUR <br> EMBEDDED <span class="highlight">PROJECT</span>
+                            </h2>
+                            <p class="blueprint-desc">
+                                Discuss your embedded systems, PCB design, or IoT product with our engineering team.
+                                Built for performance. Designed for production.
+                            </p>
+
+                            <!-- Contact Data -->
+                            <div class="data-grid" style="margin-top: 3rem;">
+                                <a href="mailto:blurotech.in@gmail.com" class="data-item">
+                                    <div class="data-icon">@</div>
+                                    <div class="data-content">
+                                        <span class="data-label">Email Us</span>
+                                        <span class="data-value">blurotech.in@gmail.com</span>
+                                    </div>
+                                </a>
+                                <div class="data-item">
+                                    <div class="data-icon">⌖</div>
+                                    <div class="data-content">
+                                        <span class="data-label">Headquarters</span>
+                                        <span class="data-value">Tamilnadu, India</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-data" style="margin-top: 2rem; border-top: none; padding-top: 0;">
+                                <div class="social-grid">
+                                    <a href="https://www.linkedin.com/company/blurotech" target="_blank"
+                                        class="cta-social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                    <a href="https://www.instagram.com/blurotech/" target="_blank"
+                                        class="cta-social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Block: Input Form -->
+                        <div class="grid-block form-block">
+                            <form class="blueprint-form" id="contactForm" autocomplete="off">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Your Name</label>
+                                        <input type="text" name="name" placeholder="John Doe" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" name="email" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="tel" name="phone" placeholder="+91 98765 43210">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Your Company</label>
+                                        <input type="text" name="company" placeholder="Company Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Project Type</label>
+                                    <div class="select-wrapper">
+                                        <select name="project_type" required>
+                                            <option value="" disabled selected>Select an option...</option>
+                                            <option value="embedded">Embedded Systems</option>
+                                            <option value="iot">IoT Solutions</option>
+                                            <option value="design">Product Design</option>
+                                            <option value="consulting">Engineering Consulting</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea name="message" rows="4" placeholder="Tell us about your project goals..."
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="blueprint-btn"
+                                    style="width: 100%; justify-content: center;">
+                                    Start My Project
+                                </button>
+                            </form>
+
+                            <!-- Success Message (hidden by default) -->
+                            <div id="form-success" style="display:none; text-align:center; padding: 2rem 0;">
+                                <div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>
+                                <h3 style="color:var(--accent-gold); margin-bottom:0.75rem;">Message Sent!</h3>
+                                <p style="color:var(--text-muted); font-size:1rem; line-height:1.6;">
+                                    Thank you for reaching out. Our engineering team will contact you shortly.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Bar: Decorative Tech Lines -->
+                    <div class="blueprint-footer">
+                        <div class="decor-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Robust Infinite Carousel Script
+            (function () {
+                const track = document.getElementById('testimonials-track');
+                if (!track) return;
+
+                // 1. Get original items
+                const originalCards = Array.from(track.querySelectorAll('.testimonial-card'));
+                if (originalCards.length === 0) return;
+
+                // 2. Measure dimensions from the first card
+                // Ensure variables are available by checking computed styles
+                const firstCard = originalCards[0];
+                const cardStyle = window.getComputedStyle(firstCard);
+                const trackStyle = window.getComputedStyle(track);
+
+                // Calculate single card width including potential margin (if any)
+                // We use offsetWidth (border-box width) + gap
+                const cardWidth = firstCard.offsetWidth;
+                // Parse gap from track style, default to 32px (2rem) if failing
+                const gap = parseFloat(trackStyle.gap) || 32;
+
+                // Total width of ONE set of cards
+                const singleSetWidth = (cardWidth + gap) * originalCards.length;
+
+                // 3. Determine how many duplicates we need
+                // We need to ensure the track is long enough to scroll 'singleSetWidth' 
+                // AND still fill the viewport.
+                // At minimum, we need 2 sets (Original + Duplicate).
+                // But for safety on wide screens vs few cards, let's create enough width.
+                // Target width: at least 3x screen width or minimum 3 sets
+                const screenWidth = window.innerWidth;
+                const minSets = Math.ceil((screenWidth * 2) / singleSetWidth) + 1;
+                // Minimum 2 sets for the loop logic to work at all
+                const setsToCreate = Math.max(minSets, 2);
+
+                // 4. Duplicate cards
+                // Clear track first to rebuild (keeping originals in memory)
+                // Better approach: just append clones.
+
+                // We already have 1 set on DOM.
+                for (let i = 1; i < setsToCreate; i++) {
+                    originalCards.forEach(card => {
+                        const clone = card.cloneNode(true);
+                        track.appendChild(clone);
+                    });
+                }
+                // Explicitly set track width to hold all cards without wrapping or layout shifts
+                const finalTotalWidth = (cardWidth + gap) * (originalCards.length * setsToCreate);
+                track.style.width = `${finalTotalWidth}px`;
+
+                // Handle "Read More" logic
+                const cards = track.querySelectorAll('.testimonial-card');
+                cards.forEach(card => {
+                    const textP = card.querySelector('.testimonial-text');
+                    if (!textP) return;
+
+                    // Ensure clean start
+                    const existingBtn = card.querySelector('.read-more-btn');
+                    if (existingBtn) existingBtn.remove();
+
+                    // Check for overflow
+                    // Since it's clamped to 3 lines, scrollHeight > clientHeight means it's truncated
+                    if (textP.scrollHeight > textP.clientHeight + 5) {
+                        const btn = document.createElement('button');
+                        btn.className = 'read-more-btn';
+                        btn.textContent = 'Read More';
+                        // Insert after text
+                        textP.parentNode.insertBefore(btn, textP.nextSibling);
+
+                        btn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const isExpanded = textP.style.webkitLineClamp === 'unset';
+
+                            if (isExpanded) {
+                                textP.style.webkitLineClamp = '3';
+                                btn.textContent = 'Read More';
+                                card.style.height = '300px';
+                                card.style.zIndex = '';
+                                card.style.position = 'relative';
+                                card.style.background = 'rgba(255, 255, 255, 0.05)';
+                                card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+                            } else {
+                                textP.style.webkitLineClamp = 'unset';
+                                textP.style.display = 'block';
+                                btn.textContent = 'Read Less';
+                                card.style.height = 'auto';
+                                card.style.minHeight = '300px';
+                                card.style.zIndex = '1000';
+                                card.style.position = 'absolute';
+                                card.style.width = '350px';
+                                card.style.background = '#0a0a1a'; // Darker solid background
+                                card.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(252, 196, 25, 0.2)';
+                                card.style.border = '1px solid var(--accent-gold)';
+                            }
+                        });
+                    }
+                });
+
+                // 5. Create Dynamic Keyframes
+                const animationName = 'scroll-testimonials-dynamic';
+                // Move exactly the width of the original set
+                const keyframes = `
+                    @keyframes ${animationName} {
+                        0% { transform: translate3d(0, 0, 0); }
+                        100% { transform: translate3d(-${singleSetWidth}px, 0, 0); }
+                    }
+                `;
+
+                const styleSheet = document.createElement('style');
+                styleSheet.textContent = keyframes;
+                document.head.appendChild(styleSheet);
+
+                // 6. Set Animation
+                // Speed calculation: e.g., 50 pixels per second sounds reasonable/slow
+                const speedPxPerSec = 50;
+                const duration = singleSetWidth / speedPxPerSec;
+
+                track.style.animation = `${animationName} ${duration}s linear infinite`;
+
+                // 7. Hover Interactions (re-attach to ALL cards)
+                const allCards = track.querySelectorAll('.testimonial-card');
+                allCards.forEach(card => {
+                    // Pause animation
+                    card.addEventListener('mouseenter', () => {
+                        track.style.animationPlayState = 'paused';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        track.style.animationPlayState = 'running';
+                    });
+                });
+            })();
+        </script>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Main Footer Grid -->
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">BLURO</a>
+                    <p class="footer-tagline">Embedded systems, custom PCB design, and IoT product engineering —
+                        built for performance, reliability, and production-scale deployment.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/blurotech" class="social-link" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/blurotech/" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="mailto:blurotech.in@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/blurotech" class="social-link" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Company</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#contact-cta">Contact</a></li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://maps.google.com/?q=Tamilnadu,India" target="_blank"
+                                style="color: inherit; text-decoration: none;">Tamilnadu, India</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:blurotech.in@gmail.com">blurotech.in@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span class="copyright-year"></span> Bluro Technology. All rights reserved
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="sep">|</span>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let hasAnimated = false;
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+        };
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    counters.forEach(counter => animateCounter(counter));
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('#stats');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+/* 
+    Bluro Technology - Premium Footer System
+    Design Language: Modern, Technical, Clean
+*/
+
+.footer {
+    background-color: #020c1b;
+    color: var(--text-white);
+    padding: 40px 0 20px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% -20%, rgba(100, 255, 218, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Main Grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 10px;
+}
+
+.footer-brand .footer-logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.footer-brand .footer-tagline {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--text-white);
+    border-color: var(--text-white);
+    color: var(--primary-deep);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15);
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 15px;
+}
+
+.footer-list a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-list a:hover {
+    color: var(--accent-gold);
+    transform: translateX(5px);
+}
+
+.contact-info li {
+    display: flex;
+    gap: 15px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.contact-info i {
+    color: var(--accent-gold);
+    margin-top: 5px;
+}
+
+.contact-info span {
+    line-height: 1.5;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+    /* border-top: 1px solid var(--glass); */
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-legal .sep {
+    color: rgba(255, 255, 255, 0.1);
+    font-weight: 300;
+}
+
+.footer-bottom a {
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-gold);
+}
+
+/* Responsiveness */
+
+/* mobile responce code sectoin with size details */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer-container {
+        padding: 0 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-legal {
+        justify-content: center;
+    }
+}
+/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: span 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .footer-brand .footer-tagline { max-width: 80%; }
+}

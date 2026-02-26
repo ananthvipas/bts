@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover Bluro's mission to bridge the gap between code and hardware. Our strategic engineering partners specialize in electronics, software, and hardware R&D.">
+    <title>About Bluro | Electronics Design & Hardware R&D Specialists</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/tit143lg123.svg">
+
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="About Bluro - Engineering Excellence">
+    <meta property="og:description"
+        content="Strategic engineering partners for electronics and software. Our story, mission, and the metrics of our success.">
+    <meta property="og:image" content="assets/images/hero-bg12345.jpg">
+    <meta property="og:url" content="https://www.blurotech.in/about.html">
+    <meta property="og:type" content="website">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Bluro Technology",
+          "foundingDate": "2024",
+          "description": "Bluro provides end-to-end engineering excellence in Embedded Solutions, IoT, and Prototype Development."
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.blurotech.in/index.html"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.blurotech.in/about.html"
+        }]
+      }
+    ]
+    </script>
+
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container container-nav">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/icons/logo6123516.svg" alt="Bluro Logo">
+                    <span>BLURO</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="index.html#contact-cta">Contact</a></li>
+                </ul>
+                <a href="index.html#contact-cta" class="btn btn-outline">Request Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Generative Circuit Background -->
+    <canvas id="frame"></canvas>
+
+    <main>
+        <!-- About Hero V2 (PCB Aesthetic) -->
+        <section class="hero-about-v2">
+            <!-- SVG PCB Tracks Background -->
+            <svg class="pcb-tracks" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+                <path class="pcb-line" d="M0,100 L200,100 L250,150 L250,300 L300,350 L500,350" />
+                <path class="pcb-line" d="M1000,900 L800,900 L750,850 L750,700 L700,650 L500,650" />
+                <path class="pcb-line" d="M0,800 L300,800 L350,750 L600,750" />
+                <path class="pcb-line" d="M1000,200 L700,200 L650,250 L400,250" />
+
+                <!-- Solder Points -->
+                <circle class="solder-point" cx="200" cy="100" r="4" style="animation-delay: 0.5s;" />
+                <circle class="solder-point" cx="500" cy="350" r="4" style="animation-delay: 1.2s;" />
+                <circle class="solder-point" cx="800" cy="900" r="4" style="animation-delay: 0.8s;" />
+                <circle class="solder-point" cx="500" cy="650" r="4" style="animation-delay: 1.5s;" />
+            </svg>
+
+            <!-- Electronics Atom Decor -->
+            <div class="pl-wrapper pl-hero">
+                <div class="pl">
+                    <svg class="pl__rings" viewBox="0 0 128 128" width="128px" height="128px">
+                        <g fill="none" stroke-linecap="round" stroke-width="4">
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.3)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(180)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.3)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(180)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(180)">
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="pl__nucleus">
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-hero-content">
+                <h1 class="company-reveal">
+                    <div class="voltage-pulse"></div>
+                    <div class="reveal-line">
+                        <span class="reveal-text">Bluro Technology</span>
+                    </div>
+                </h1>
+
+                <p>
+                    A unified embedded systems and PCB engineering company
+                    delivering production-ready hardware and scalable IoT architecture.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Story Section V2 -->
+        <section class="story-section-v2">
+            <!-- Electronics Atom Decor -->
+            <div class="pl-wrapper pl-story">
+                <div class="pl">
+                    <svg class="pl__rings" viewBox="0 0 128 128" width="128px" height="128px">
+                        <g fill="none" stroke-linecap="round" stroke-width="4">
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.3)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(180)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.3)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(180)">
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0)" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30"
+                                    stroke="hsla(223,90%,50%,0.5)" stroke-dasharray="50 240" />
+                                <ellipse class="pl__orbit" cx="64" cy="64" rx="60" ry="30" stroke="hsl(223,90%,50%)"
+                                    stroke-dasharray="25 265" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(0)">
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                            </g>
+                            <g class="pl__ring" transform="rotate(180)">
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                                <ellipse class="pl__electron" cx="64" cy="64" rx="60" ry="30" stroke="hsl(0,0%,100%)"
+                                    stroke-dasharray="1 289" stroke-width="8" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="pl__nucleus">
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                        <div class="pl__nucleus-particle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="story-grid">
+                <div class="story-text fade-up">
+                    <span class="intro-lead">Founded in 2026</span>
+
+                    <h2>Bringing Hardware and Software Together</h2>
+
+                    <p>
+                        Modern hardware development is often fragmented —
+                        embedded firmware, PCB design, and manufacturing strategy
+                        operate in isolation, leading to inefficiencies, redesigns,
+                        and delayed production.
+                    </p>
+
+                    <p>
+                        Bluro Technology was built to eliminate that gap.
+                        We operate as a unified engineering ecosystem, integrating
+                        embedded systems, electronics design, firmware architecture,
+                        and production planning under one technical vision.
+                    </p>
+                </div>
+
+                <div class="story-visual fade-up">
+                    <img src="assets/images/Services/emb_img/Digital brain.jpg"
+                        alt="Unified Embedded Systems Engineering Process">
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Mission & Vision Section -->
+        <section class="mission-vision-section">
+            <div class="container">
+                <div class="mission-vision-grid-v2">
+                    <div class="mv-card-v2 fade-up">
+                        <div class="mv-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Mission</h3>
+                        <p>Our mission is to deliver reliable, scalable, and high-performance embedded systems and
+                            electronics solutions that empower OEMs, industrial innovators, and fast-scaling tech
+                            companies to accelerate R&D and deploy production-ready hardware with absolute confidence.
+                        </p>
+                    </div>
+                    <div class="mv-card-v2 fade-up">
+                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Vision</h3>
+                        <p>Our vision is to be the premier engineering partner for complex hardware-software
+                            integration, driving industrial innovation through rigorous embedded design, advanced IoT
+                            architecture, and the development of robust, scalable technology solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unified Ecosystem Section -->
+        <section class="ecosystem-section">
+            <div class="ecosystem-header fade-up">
+                <span class="tagline">The Bluro Advantage</span>
+                <h2>One Vision. Total Integration.</h2>
+            </div>
+            <div class="ecosystem-grid">
+                <!-- Card 1 -->
+                <div class="eco-card fade-up">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Hardware Sync</h3>
+                    <p>We develop PCB layouts and electronic architecture in perfect sync with system-level constraints,
+                        reducing redesign costs and ensuring hardware integrity from the first build.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="eco-card fade-up">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Firmware Synergy</h3>
+                    <p>Our engineers write hardware-aware code that maximizes performance and minimizes power usage. We
+                        ensure firmware and hardware operate as a single, optimized unit.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="eco-card fade-up">
+                    <i class="fas fa-industry"></i>
+                    <h3>Production Readiness</h3>
+                    <p>We design for manufacturing (DFM) from day one. Our process ensures a seamless transition from
+                        prototype to production with reliability.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Engineering Leadership Section -->
+        <section class="leadership-section"
+            style="padding: 5rem 0; background: var(--bg-dark); border-top: 1px solid var(--border-light);">
+            <div class="container">
+                <div class="section-header fade-up" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="tagline">OUR EXPERTISE</span>
+                    <h2>Engineering Leadership</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto;">Bluro's engineering core
+                        is led by veterans in hardware and firmware architecture, dedicated to deploying reliable,
+                        production-grade solutions for complex industrial challenges.</p>
+                </div>
+                <div class="leadership-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Leadership Card 1 -->
+                    <div class="eco-card fade-up" style="text-align: center; padding: 2rem;">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(0, 240, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--accent-cyan); font-size: 2rem;">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Hardware Architecture</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">Precision-engineered multi-layer layouts
+                            designed for maximum reliability and cost-effective manufacturing (DFM) at any volume.</p>
+                    </div>
+                    <!-- Leadership Card 2 -->
+                    <div class="eco-card fade-up" style="text-align: center; padding: 2rem;">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(0, 240, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--accent-cyan); font-size: 2rem;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Firmware & RTOS</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">Specialized in developing failure-proof,
+                            hardware-optimized code and RTOS integration for mission-critical industrial applications.
+                        </p>
+                    </div>
+                    <!-- Leadership Card 3 -->
+                    <div class="eco-card fade-up" style="text-align: center; padding: 2rem;">
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(0, 240, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--accent-cyan); font-size: 2rem;">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>IoT Infrastructure</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">Architecting secure, end-to-end data pipelines
+                            and actionable edge intelligence using modern wireless protocols and cloud integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Main Footer Grid -->
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">BLURO</a>
+                    <p class="footer-tagline">Advanced Embedded & IoT Engineering Excellence. Delivering
+                        production-ready hardware solutions for a connected world.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/blurotech" class="social-link" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/blurotech/" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="mailto:blurotech.in@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/blurotech" class="social-link" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Company</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#contact-cta">Contact</a></li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://maps.google.com/?q=Tamilnadu,India" target="_blank"
+                                style="color: inherit; text-decoration: none;">Tamilnadu, India</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>blurotech.in@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span class="copyright-year"></span> Bluro Technology. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="sep">|</span>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/circuit-bg.js"></script>
+</body>
+
+</html>

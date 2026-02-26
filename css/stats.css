@@ -1,0 +1,271 @@
+/* 
+    Statistics Section - Professional Design
+    Unique horizontal card layout with gradient borders
+*/
+
+.stats-professional {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-deep) 0%, #020c1b 50%, var(--primary-light) 100%);
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+/* Background Pattern */
+.stats-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(252, 196, 25, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(100, 255, 218, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Header */
+.stats-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeSlideDown 0.8s ease-out;
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--white);
+    margin: 0;
+}
+
+/* Stats Showcase Grid */
+.stats-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Stat Box */
+.stat-box {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: statBoxSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stat-box[data-aos="fade-up"] {
+    animation-delay: 0.2s;
+}
+
+.stat-box[data-delay="100"] {
+    animation-delay: 0.35s;
+}
+
+.stat-box[data-delay="200"] {
+    animation-delay: 0.5s;
+}
+
+@keyframes statBoxSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Dynamic Colors based on nth-child */
+/* Default (Gold) - Cards 1 & 3 */
+.stat-box {
+    --card-accent: var(--accent-gold);
+    --card-glow: rgba(252, 196, 25, 0.4);
+}
+
+/* Teal - Card 2 */
+.stat-box:nth-child(2) {
+    --card-accent: var(--accent-blue);
+    --card-glow: rgba(100, 255, 218, 0.4);
+}
+
+/* Gradient Border */
+.stat-gradient-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--card-accent), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    mask-mode: alpha;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    opacity: 0.5;
+}
+
+.stat-box:hover .stat-gradient-border {
+    opacity: 1;
+    background: linear-gradient(135deg, var(--card-accent), var(--card-glow), transparent);
+}
+
+/* Icon Wrapper */
+.stat-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box:hover .stat-icon-wrapper {
+    transform: rotate(-5deg) scale(1.1);
+    background: linear-gradient(135deg, var(--card-glow), transparent);
+    border-color: var(--card-accent);
+}
+
+.stat-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+    color: var(--text-muted);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stat-box:hover .stat-icon-wrapper svg {
+    transform: scale(1.1);
+    color: var(--card-accent);
+}
+
+/* Stat Content */
+.stat-content {
+    flex: 1;
+}
+
+.stat-content h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    margin: 0 0 0.5rem 0;
+    line-height: 1;
+    letter-spacing: -1px;
+    transition: color 0.3s ease;
+}
+
+.stat-box:hover .stat-content h3 {
+    color: var(--card-accent);
+}
+
+.stat-label-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 0 0 0.8rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animated Underline */
+.stat-underline {
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--card-accent), transparent);
+    border-radius: 3px;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-box:hover .stat-underline {
+    width: 60px;
+}
+
+/* Responsive Design */
+
+/* mobile responce code sectoin with size details */
+@media (max-width: 992px) {
+    .stats-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-professional {
+        padding: 4rem 0;
+    }
+
+    .stat-box {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .stat-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .stat-icon-wrapper svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .stat-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .stat-label-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .stats-showcase {
+        grid-template-columns: 1fr 1fr;
+        max-width: 900px;
+        gap: 2rem;
+    }
+
+    .stat-box:last-child {
+        grid-column: span 2;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}

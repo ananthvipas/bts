@@ -1,0 +1,496 @@
+/* -----------------------------------------------------------
+   NEBULA CONTACT SECTION - UNIQUE & PROFESSIONAL
+   Theme: Deep Space, Soft Glow, Modern Glassmorphism
+   ----------------------------------------------------------- */
+
+:root {
+    --nebula-bg: var(--primary-deep);
+    --glass-surface: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glow-gold: rgba(252, 196, 25, 0.15);
+    --glow-blue: rgba(100, 255, 218, 0.1);
+}
+
+.schematic-section {
+    position: relative;
+    padding: 3rem 0;
+    background: var(--primary-deep);
+    background-image: radial-gradient(circle at 0% 0%, rgba(23, 42, 69, 0.8), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(10, 25, 47, 1), transparent 40%);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* --- Dynamic Nebula Glows --- */
+.schematic-grid-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--glow-blue) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    animation: pulseGlow 10s infinite alternate;
+}
+
+.schematic-grid-bg::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
+    bottom: -200px;
+    left: -200px;
+    /* Relative to parent, but parent is top-right? No, need a separate element */
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatGlow 15s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes floatGlow {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50px, 50px);
+    }
+}
+
+/* --- Main Container Card --- */
+.blueprint-container {
+    background: rgba(10, 25, 47, 0.6);
+    /* More transparent */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 95%;
+    position: relative;
+    border-radius: 24px;
+    /* Soft modern corners */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Decorative Top Gradient Line */
+.blueprint-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), var(--accent-gold), transparent);
+    opacity: 0.5;
+}
+
+/* --- Header Bar (Simplified) --- */
+.blueprint-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.sys-id {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.sys-status {
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.blink-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 8px var(--accent-blue);
+}
+
+/* --- Main Grid Layout --- */
+.blueprint-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 550px;
+}
+
+/* Common Block Styles */
+.grid-block {
+    padding: 4rem;
+}
+
+/* --- Left Block (Content) --- */
+.main-cta-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.main-cta-block::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--glass-border), transparent);
+}
+
+.tech-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.blueprint-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.blueprint-title .highlight {
+    background: linear-gradient(120deg, var(--text-white), var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blueprint-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 480px;
+}
+
+/* Data Grid (Left Side) */
+.data-grid {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.data-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.data-item:hover {
+    transform: translateX(5px);
+}
+
+.data-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    /* Soft square */
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.data-item:hover .data-icon {
+    background: var(--accent-gold);
+    color: var(--primary-deep);
+}
+
+.data-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.data-value {
+    color: var(--text-white);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Socials */
+.social-data {
+    margin-top: 3rem;
+}
+
+.social-grid {
+    display: flex;
+    gap: 12px;
+}
+
+.cta-social-link {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-social-link i {
+    font-size: 1rem;
+    color: var(--accent-gold);
+}
+
+.cta-social-link:hover {
+    background: var(--text-white);
+    color: var(--primary-deep);
+    font-weight: 600;
+}
+
+.cta-social-link:hover i {
+    color: var(--primary-deep);
+}
+
+
+/* --- Right Block (Form) --- */
+.form-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blueprint-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Two fields side-by-side */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-group label {
+    font-size: 0.8rem;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.blueprint-form input,
+.blueprint-form select,
+.blueprint-form textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    padding: 1.2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    /* Soft modern corners */
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.blueprint-form input::placeholder,
+.blueprint-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.blueprint-form input:focus,
+.blueprint-form select:focus,
+.blueprint-form textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blueprint-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button */
+.blueprint-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-gold), #ffcf33);
+    color: var(--primary-deep);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(252, 196, 25, 0.2);
+    margin-top: 1rem;
+}
+
+.blueprint-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(252, 196, 25, 0.4);
+}
+
+/* --- Responsive --- */
+
+/* --- Dropdown Fix (Added) --- */
+.blueprint-form select option {
+    background-color: #0a192f;
+    /* Deep Navy Background */
+    color: #e6f1ff;
+    /* White Text */
+    padding: 12px;
+}
+
+/* mobile responce code sectoin with size details */
+@media (max-width: 900px) {
+    .blueprint-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-cta-block::after {
+        display: none;
+    }
+
+    .grid-block {
+        padding: 1rem 1rem;
+    }
+
+    .blueprint-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .blueprint-desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .data-grid {
+        justify-content: center;
+    }
+
+    .social-grid {
+        justify-content: center;
+    }
+
+    .blueprint-desc {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 0rem;
+        max-width: 480px;
+    }
+
+    .blueprint-form input,
+    .blueprint-form select,
+    .blueprint-form textarea {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--glass-border);
+        color: var(--text-white);
+        font-family: 'Inter', sans-serif;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        /* Soft modern corners */
+        width: 100%;
+        transition: all 0.3s;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .blueprint-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-cta-block::after {
+        display: none;
+    }
+
+    .grid-block {
+        padding: 3rem;
+    }
+
+    .blueprint-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .blueprint-desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .data-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        justify-items: flex-start;
+    }
+
+    .social-grid {
+        justify-content: center;
+    }
+}
