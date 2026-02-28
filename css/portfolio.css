@@ -246,9 +246,14 @@
 /* --- Portfolio Preview V3 (Homepage Specific) --- */
 .preview-section-v3 {
     position: relative;
-    padding: 3rem 0;
+    padding: 6rem 0;
     background: var(--primary-deep);
     overflow: hidden;
+}
+
+.preview-section-v3 .container {
+    position: relative;
+    z-index: 10;
 }
 
 .preview-blueprint-grid {
@@ -427,6 +432,10 @@
 
 /* mobile responce code sectoin with size details */
 @media (max-width: 992px) {
+    .preview-section-v3 {
+        padding: 4rem 0;
+    }
+
     .preview-grid-featured {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
