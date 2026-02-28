@@ -5,7 +5,7 @@
 
 .stats-professional {
     position: relative;
-    background: linear-gradient(135deg, var(--primary-deep) 0%, #020c1b 50%, var(--primary-light) 100%);
+    background: var(--bg-primary);
     padding: 5rem 0;
     overflow: hidden;
 }
@@ -63,10 +63,10 @@
 /* Stat Box */
 .stat-box {
     position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    background: var(--bg-secondary);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 2.5rem 2rem;
+    padding: 1rem 1.2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -97,8 +97,8 @@
 
 .stat-box:hover {
     transform: translateY(-8px);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-main);
 }
 
 /* Dynamic Colors based on nth-child */
@@ -145,13 +145,13 @@
     height: 70px;
     min-width: 70px;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-main);
 }
 
 .stat-box:hover .stat-icon-wrapper {
@@ -178,7 +178,7 @@
 }
 
 .stat-content h3 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: var(--white);
     margin: 0 0 0.5rem 0;
@@ -230,7 +230,7 @@
     }
 
     .stat-box {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1.5rem;
         gap: 1.5rem;
     }
 
@@ -246,26 +246,10 @@
     }
 
     .stat-content h3 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .stat-label-text {
         font-size: 0.9rem;
-    }
-}
-
-/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .stats-showcase {
-        grid-template-columns: 1fr 1fr;
-        max-width: 900px;
-        gap: 2rem;
-    }
-
-    .stat-box:last-child {
-        grid-column: span 2;
-        max-width: 500px;
-        margin: 0 auto;
-        width: 100%;
     }
 }

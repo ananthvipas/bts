@@ -8,6 +8,7 @@
         content="Bluro Technology provides production-ready embedded solutions, IoT systems, and precision PCB design. Engineering excellence for innovators seeking reliable hardware scaling.">
     <title>Bluro | Advanced Embedded Solutions & IoT Engineering India</title>
     <link rel="icon" type="image/svg+xml" href="assets/icons/tit143lg123.svg">
+    <script src="js/theme-toggle.js"></script>
 
     <!-- SEO Meta Tags -->
     <meta property="og:title" content="Bluro - Advanced Embedded Solutions & IoT">
@@ -90,7 +91,7 @@
     <link rel="stylesheet" href="css/footer.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         /* Landing Page Specific Styles */
@@ -99,7 +100,7 @@
             display: flex;
             align-items: center;
             background:
-                linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.75)),
+                var(--hero-overlay),
                 url('assets/images/hero-bg12345.jpg') center/cover no-repeat,
                 var(--primary-deep);
             position: relative;
@@ -122,7 +123,7 @@
             left: 0;
             width: 100%;
             height: 150px;
-            background: linear-gradient(to bottom, transparent, var(--primary-deep));
+            background: linear-gradient(to bottom, transparent, var(--bg-primary));
             z-index: 5;
             pointer-events: none;
         }
@@ -133,7 +134,7 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(1.8rem, 8vw, 4.5rem);
             margin-bottom: 1.5rem;
             color: var(--white);
         }
@@ -161,6 +162,7 @@
 
         section {
             padding: 2rem 0;
+            background-color: var(--primary-deep);
         }
 
         .section-header {
@@ -169,8 +171,8 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 6vw, 2.5rem);
+            margin-bottom: 4rem;
         }
 
         .section-header p {
@@ -214,22 +216,22 @@
             align-items: flex-start;
             gap: 1.25rem;
             padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--glass);
+            border: 1px solid var(--glass);
             border-radius: 12px;
             transition: all 0.3s ease;
         }
 
         .cap-item:hover {
-            background: rgba(0, 240, 255, 0.05);
-            border-color: rgba(0, 240, 255, 0.2);
+            background: var(--bg-secondary);
+            border-color: var(--accent-blue);
             transform: translateX(8px);
         }
 
         .cap-icon {
-            color: var(--accent-cyan);
+            color: var(--accent-blue);
             font-size: 1.25rem;
-            background: rgba(0, 240, 255, 0.1);
+            background: var(--glass);
             width: 48px;
             height: 48px;
             display: flex;
@@ -237,7 +239,7 @@
             justify-content: center;
             border-radius: 50%;
             flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.15);
+            box-shadow: 0 4px 15px var(--glass-border);
         }
 
         .cap-title {
@@ -293,20 +295,39 @@
                     <img src="assets/icons/logo6123516.svg" alt="Bluro Logo">
                     <span>BLURO</span>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="index.html#contact-cta">Contact</a></li>
-                </ul>
-                <div class="header-btns">
-                    <!-- <a href="index.html#contact-cta" class="btn btn-outline"></a> -->
-                    <button class="menu-toggle" aria-label="Toggle Menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#contact-cta">Contact</a></li>
+                    </ul>
+                    <div class="header-btns">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                        <button class="menu-toggle" aria-label="Toggle Menu">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -489,7 +510,7 @@
             <div class="container">
                 <div class="section-header fade-up">
                     <span class="tagline">ENGINEERING SHOWCASE</span>
-                    <h2 style="font-size: clamp(2rem, 5vw, 3.5rem);">System Deployments</h2>
+                    <h2 style="font-size: clamp(1.5rem, 5vw, 3.5rem);">System Deployments</h2>
                 </div>
 
                 <div class="preview-grid-featured">
@@ -738,16 +759,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
-                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                        <div class="card-content">
+                            <h3 class="client-name">
                                 Sunthara
                             </h3>
-                            <p
-                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                            <p class="client-role">
                                 SKF Automation</p>
-                            <hr
-                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
-                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">Bluro
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">Bluro
                                 engineered our industrial sensing nodes from scratch. Their ability to deliver
                                 production-ready PCBs on a tight timeline saved us months of R&D.</p>
                         </div>
@@ -777,15 +796,13 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
-                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">Shivani
+                        <div class="card-content">
+                            <h3 class="client-name">Shivani
                             </h3>
-                            <p
-                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                            <p class="client-role">
                                 Student</p>
-                            <hr
-                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
-                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
                                 Satisfied with the PCB design service. The team maintained clear communication and
                                 provided consistent progress updates throughout the project.</p>
                         </div>
@@ -815,16 +832,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
-                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                        <div class="card-content">
+                            <h3 class="client-name">
                                 Giri
                             </h3>
-                            <p
-                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                            <p class="client-role">
                                 NPower Electro</p>
-                            <hr
-                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
-                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">Very
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">Very
                                 satisfied with the embedded board development support. The hardware was well-designed,
                                 optimized, and delivered on time with excellent technical coordination.</p>
                         </div>
@@ -854,16 +869,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
-                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                        <div class="card-content">
+                            <h3 class="client-name">
                                 Manikandan
                             </h3>
-                            <p
-                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                            <p class="client-role">
                                 Entrepreneur</p>
-                            <hr
-                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
-                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
                                 Professional circuit design service with strong technical expertise. The team ensured
                                 accuracy, reliability, and smooth coordination from concept to final design.</p>
                         </div>
@@ -893,16 +906,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-content" style="padding: 40px 30px 20px 30px;">
-                            <h3 style="color: var(--accent-gold); font-size: 22px; font-weight: 700; margin: 0;">
+                        <div class="card-content">
+                            <h3 class="client-name">
                                 Kanimozhi
                             </h3>
-                            <p
-                                style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; margin: 4px 0 15px 0;">
+                            <p class="client-role">
                                 Student</p>
-                            <hr
-                                style="height: 1px; background-color: rgba(255,255,255,0.1); border: none; margin-bottom: 15px;">
-                            <p style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6; margin: 0;">
+                            <hr class="testimonial-divider">
+                            <p class="testimonial-text">
                                 Very impressed with the sensor integration work. The system performance was accurate and
                                 stable, and the team maintained clear status at every stage.</p>
                         </div>
@@ -986,7 +997,7 @@
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="tel" name="phone" placeholder="+91 98765 43210">
+                                        <input type="tel" name="phone" placeholder="+91 98765 43210" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Your Company</label>
@@ -1010,8 +1021,8 @@
 
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea name="message" rows="4" placeholder="Tell us about your project goals..."
-                                        required></textarea>
+                                    <textarea name="message" rows="4"
+                                        placeholder="Tell us about your project goals..."></textarea>
                                 </div>
 
                                 <button type="submit" class="blueprint-btn"
@@ -1090,55 +1101,10 @@
                 const finalTotalWidth = (cardWidth + gap) * (originalCards.length * setsToCreate);
                 track.style.width = `${finalTotalWidth}px`;
 
-                // Handle "Read More" logic
-                const cards = track.querySelectorAll('.testimonial-card');
-                cards.forEach(card => {
-                    const textP = card.querySelector('.testimonial-text');
-                    if (!textP) return;
-
-                    // Ensure clean start
-                    const existingBtn = card.querySelector('.read-more-btn');
-                    if (existingBtn) existingBtn.remove();
-
-                    // Check for overflow
-                    // Since it's clamped to 3 lines, scrollHeight > clientHeight means it's truncated
-                    if (textP.scrollHeight > textP.clientHeight + 5) {
-                        const btn = document.createElement('button');
-                        btn.className = 'read-more-btn';
-                        btn.textContent = 'Read More';
-                        // Insert after text
-                        textP.parentNode.insertBefore(btn, textP.nextSibling);
-
-                        btn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            const isExpanded = textP.style.webkitLineClamp === 'unset';
-
-                            if (isExpanded) {
-                                textP.style.webkitLineClamp = '3';
-                                btn.textContent = 'Read More';
-                                card.style.height = '300px';
-                                card.style.zIndex = '';
-                                card.style.position = 'relative';
-                                card.style.background = 'rgba(255, 255, 255, 0.05)';
-                                card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-                            } else {
-                                textP.style.webkitLineClamp = 'unset';
-                                textP.style.display = 'block';
-                                btn.textContent = 'Read Less';
-                                card.style.height = 'auto';
-                                card.style.minHeight = '300px';
-                                card.style.zIndex = '1000';
-                                card.style.position = 'absolute';
-                                card.style.width = '350px';
-                                card.style.background = '#0a0a1a'; // Darker solid background
-                                card.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(252, 196, 25, 0.2)';
-                                card.style.border = '1px solid var(--accent-gold)';
-                            }
-                        });
-                    }
-                });
+                // "Read More" logic has been removed as per user request.
 
                 // 5. Create Dynamic Keyframes
+
                 const animationName = 'scroll-testimonials-dynamic';
                 // Move exactly the width of the original set
                 const keyframes = `

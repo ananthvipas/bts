@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 name: contactForm.querySelector('[name="name"]').value.trim(),
                 email: contactForm.querySelector('[name="email"]').value.trim(),
-                phone: contactForm.querySelector('[name="phone"]').value.trim() || 'Not provided',
+                phone: contactForm.querySelector('[name="phone"]').value.trim(),
                 company: contactForm.querySelector('[name="company"]').value.trim() || 'Not provided',
                 project_type: contactForm.querySelector('[name="project_type"]').value,
                 message: contactForm.querySelector('[name="message"]').value.trim()
@@ -187,4 +187,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.copyright-year').forEach(el => {
         el.textContent = new Date().getFullYear();
     });
+
 });

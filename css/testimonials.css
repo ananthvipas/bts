@@ -38,9 +38,9 @@
         box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
         border-color 0.3s ease;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--glass);
     /* Dark glassmorphism */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass);
     border-radius: 20px;
     min-width: 350px;
     /* Reduced width */
@@ -66,7 +66,7 @@
 
 /* Card Content Area */
 .testimonial-card .card-content {
-    padding: 30px 25px 5px 25px;
+    padding: 40px 30px 20px 30px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -89,65 +89,50 @@
     /* Slight Z-lift */
     box-shadow: 0 15px 40px rgba(252, 196, 25, 0.15) !important;
     border: 1px solid var(--accent-gold);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--glass);
     z-index: 10;
 }
 
-.testimonial-card h3 {
+.testimonial-card h3.client-name {
     color: var(--accent-gold);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     margin: 0;
 }
 
 .testimonial-card p.client-role {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 11px;
+    color: var(--text-muted);
+    font-size: 13px;
     font-weight: 500;
-    margin: 2px 0 10px 0;
+    margin: 4px 0 15px 0;
 }
 
-.testimonial-card hr {
-    background-color: rgba(255, 255, 255, 0.1);
+.testimonial-card hr.testimonial-divider {
+    background-color: var(--glass-border);
     height: 1px;
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
 }
 
 .testimonial-card p.testimonial-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 13.5px;
-    line-height: 1.5;
+    color: var(--text-white);
+    font-size: 14px;
+    line-height: 1.6;
     margin: 0;
-
-    /* 3-Line Clamp */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
-/* Read More Button - Styled to appear near the end or below */
-.read-more-btn {
-    color: var(--accent-gold);
-    font-size: 11px;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: underline;
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin-top: 5px;
-    text-align: left;
-    display: inline-block;
-    transition: color 0.2s ease;
+/* --- EXPLICIT LIGHT THEME OVERRIDES FOR TESTIMONIALS --- */
+:root.light-theme .testimonial-card p.testimonial-text {
+    color: #0f172a !important;
+    /* Forces dark slate color for passage */
 }
 
-.read-more-btn:hover {
-    color: #fff;
+:root.light-theme .testimonial-card p.client-role {
+    color: #475569 !important;
+    /* Forces dark grey for occupation/role */
 }
+
 
 /* Bottom Section (Rating + Quote Icon) */
 .testimonial-card .card-bottom {
@@ -162,13 +147,4 @@
    though we override it in .testimonial-card */
 :root {
     --card-white: rgba(255, 255, 255, 0.05);
-}
-
-/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .testimonial-card {
-        min-width: 320px;
-        max-width: 320px;
-        height: 320px;
-    }
 }

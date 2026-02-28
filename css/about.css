@@ -1,16 +1,13 @@
 /* About Page - Professional Hardware & IoT Aesthetic */
 
 :root {
-    --about-bg: #020617;
-    /* Deep Obsidian */
-    --about-cyan: #2dd4bf;
-    /* Technical Teal */
-    --about-gold: #fbbf24;
-    /* hardware Copper/Amber */
-    --about-text: #f8fafc;
-    --about-muted: #94a3b8;
-    --glass-bg: rgba(15, 23, 42, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --about-bg: var(--bg-primary);
+    --about-cyan: var(--accent-blue);
+    --about-gold: var(--accent-gold);
+    --about-text: var(--text-white);
+    --about-muted: var(--text-muted);
+    --glass-bg: var(--glass);
+    --glass-border: var(--glass-border);
 }
 
 /* --- Hero Section V2 (PCB Aesthetic) --- */
@@ -77,7 +74,7 @@
     opacity: 0;
     /* Starts at 0 for show animation */
     pointer-events: none;
-    background-color: #020617;
+    background-color: var(--primary-deep);
     animation: fadeInBg 2s ease-out 0.5s forwards;
 }
 
@@ -322,7 +319,7 @@
     border-radius: 24px;
     overflow: hidden;
     border: 1px solid var(--glass-border);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-main);
 }
 
 .story-visual img {
@@ -701,12 +698,12 @@
 
     .mv-card-v2 {
         padding: 3rem 2rem 2.5rem;
-        background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+        background: var(--bg-secondary);
         border: 1px solid var(--glass-border);
         border-radius: 20px;
         position: relative;
         text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--shadow-main);
         margin-top: 2rem;
     }
 
@@ -800,13 +797,4 @@
         font-size: clamp(2rem, 10vw, 3rem);
         line-height: 1.5;
     }
-}
-/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .story-grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-    .story-text { text-align: left; }
-    .mission-vision-grid-v2 { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-    .mv-card-v2 { padding: 3rem 2.5rem; }
-    .ecosystem-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .eco-card { padding: 2.5rem; }
 }

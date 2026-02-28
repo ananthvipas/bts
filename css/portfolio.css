@@ -4,13 +4,13 @@
 */
 
 :root {
-    --port-bg: #020617;
-    --port-cyan: #2dd4bf;
-    --port-gold: #fbbf24;
-    --port-text: #f8fafc;
-    --port-muted: #94a3b8;
-    --port-glass: rgba(15, 23, 42, 0.7);
-    --port-border: rgba(255, 255, 255, 0.08);
+    --port-bg: var(--bg-primary);
+    --port-cyan: var(--accent-blue);
+    --port-gold: var(--accent-gold);
+    --port-text: var(--text-white);
+    --port-muted: var(--text-muted);
+    --port-glass: var(--glass);
+    --port-border: var(--glass-border);
 }
 
 /* --- Hero Section V2 (Digital Blueprint) --- */
@@ -152,8 +152,8 @@
 .project-card-v2:hover {
     transform: translateY(-12px);
     border-color: var(--port-cyan);
-    background: rgba(45, 212, 191, 0.03);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-main);
 }
 
 .project-thumbnail {
@@ -176,7 +176,7 @@
     top: 20px;
     right: 20px;
     background: var(--port-gold);
-    color: #000;
+    color: var(--primary-deep);
     padding: 6px 16px;
     border-radius: 30px;
     font-size: 0.7rem;
@@ -239,15 +239,15 @@
 
 .project-card-v2:hover .p-btn {
     background: var(--port-gold);
-    color: #000;
+    color: var(--primary-deep);
 }
 
 
 /* --- Portfolio Preview V3 (Homepage Specific) --- */
 .preview-section-v3 {
     position: relative;
-    padding: 10rem 0;
-    background: #020c1b;
+    padding: 3rem 0;
+    background: var(--primary-deep);
     overflow: hidden;
 }
 
@@ -265,7 +265,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, transparent 0%, #020c1b 90%);
+    background: radial-gradient(circle at center, transparent 0%, var(--primary-deep) 90%);
 }
 
 .preview-grid-featured {
@@ -273,14 +273,14 @@
     z-index: 5;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: repeat(2, 300px);
+    grid-template-rows: repeat(2, 220px);
     gap: 2rem;
 }
 
 .preview-card-v3 {
     position: relative;
-    background: rgba(2, 12, 27, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -294,7 +294,7 @@
 .preview-card-v3:hover {
     border-color: var(--port-cyan);
     transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-main);
 }
 
 /* Technical Brackets */
@@ -358,6 +358,10 @@
     justify-content: flex-end;
 }
 
+:root.light-theme .preview-overlay {
+    background: linear-gradient(to top, rgba(248, 250, 252, 0.95) 20%, transparent 80%);
+}
+
 .preview-card-v3.featured .preview-overlay {
     padding: 3.5rem;
 }
@@ -374,7 +378,7 @@
 
 .preview-card-v3 h3 {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--white);
     margin-bottom: 0.5rem;
 }
 
@@ -470,11 +474,28 @@
         transform: none;
         top: 20px;
     }
-}
-/* --- iPad & Tablet Responsive View (769px - 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .preview-grid-featured { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .preview-card-v3.featured { grid-column: span 2; height: 450px; }
-    .portfolio-grid-v2 { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .project-info { padding: 2.5rem 2rem; }
+
+    /* Portfolio Preview Mobile Typography */
+    .preview-overlay {
+        padding: 1.5rem;
+    }
+
+    .preview-card-v3.featured .preview-overlay {
+        padding: 1.8rem;
+    }
+
+    .preview-card-v3 h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .preview-card-v3.featured h3 {
+        font-size: 1.5rem;
+    }
+
+    .preview-desc,
+    .preview-card-v3.featured .preview-desc {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
 }

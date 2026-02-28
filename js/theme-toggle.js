@@ -1,37 +1,38 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+/**
+ * Global Theme Toggle & Persistence
+ * This script runs immediately in the <head> to prevent theme flashing (FOUT).
+ */
 
-    // Check for saved theme preference
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        body.classList.add(currentTheme);
-        updateToggleButton(currentTheme);
+(function () {
+    // 1. Immediate Execution (Prevents Flashing)
+    const savedTheme = localStorage.getItem('theme');
+    const htmlElement = document.documentElement;
+
+    if (savedTheme === 'light') {
+        htmlElement.classList.add('light-theme');
+    } else {
+        htmlElement.classList.remove('light-theme');
     }
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('light-theme')) {
-                body.classList.remove('light-theme');
-                localStorage.setItem('theme', '');
-                updateToggleButton('dark');
-            } else {
-                body.classList.add('light-theme');
-                localStorage.setItem('theme', 'light-theme');
-                updateToggleButton('light-theme');
+    // 2. Button Interaction (Wait for DOM)
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.getElementById('theme-toggle');
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isLight = htmlElement.classList.toggle('light-theme');
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            });
+        }
+        // 3. Listen for changes from other tabs
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'theme') {
+                if (event.newValue === 'light') {
+                    htmlElement.classList.add('light-theme');
+                } else {
+                    htmlElement.classList.remove('light-theme');
+                }
             }
         });
-    }
-
-    function updateToggleButton(theme) {
-        if (!themeToggle) return;
-        const icon = themeToggle.querySelector('i');
-        if (theme === 'light-theme') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
-    }
-});
+    }); // Corrected: This closes the DOMContentLoaded listener
+})(); // This closes the main IIFE
