@@ -5,13 +5,15 @@
 
 (function () {
     // 1. Immediate Execution (Prevents Flashing)
+    // Default to 'light' if no theme is stored
     const savedTheme = localStorage.getItem('theme');
     const htmlElement = document.documentElement;
 
-    if (savedTheme === 'light') {
-        htmlElement.classList.add('light-theme');
-    } else {
+    if (savedTheme === 'dark') {
         htmlElement.classList.remove('light-theme');
+    } else {
+        // Default case OR savedTheme === 'light'
+        htmlElement.classList.add('light-theme');
     }
 
     // 2. Button Interaction (Wait for DOM)
